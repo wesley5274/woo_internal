@@ -227,6 +227,14 @@ class Wooecpay_Payment_Helper
                 $input['StoreExpireDate'] = $expire_date;
 
             break;
+
+            case 'DigitalPayment':
+
+                $input['ChooseSubPayment'] = $this->get_ChooseSubPayment($order->get_payment_method());
+
+            break;
+            
+            
         }
 
         return $input;
@@ -266,9 +274,30 @@ class Wooecpay_Payment_Helper
             case 'Wooecpay_Gateway_Weixin':
                 $choose_payment = 'WeiXin';
                 break;
+            case 'Wooecpay_Gateway_Jkopay':
+                $choose_payment = 'DigitalPayment';
+                break;
         }
 
         return $choose_payment;
+    }
+
+    public function get_ChooseSubPayment($payment_method)
+    {
+        $choose_sub_payment = '';
+
+        switch ($payment_method) {
+            
+            case 'Wooecpay_Gateway_Jkopay':
+                $choose_sub_payment = 'Jkopay';
+                break;
+
+            default:
+                $choose_sub_payment = '';
+                break;
+        }
+
+        return $choose_sub_payment;
     }
 
     /**
@@ -599,6 +628,7 @@ class Wooecpay_Payment_Helper
 			'Wooecpay_Gateway_Twqr',
 			'Wooecpay_Gateway_Bnpl',
 			'Wooecpay_Gateway_Weixin',
+            'Wooecpay_Gateway_Jkopay',
         ];
     }
 
