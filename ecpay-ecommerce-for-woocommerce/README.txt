@@ -4,7 +4,7 @@ Tags: shop, cart, checkout, payment, ecpay
 Requires at least: 6.0
 Tested up to: 6.5
 Requires PHP: 8.2
-Stable tag: 1.1.2601270
+Stable tag: 1.1.2603090
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,8 +21,11 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
-v1.1.2601270
+v1.1.2603090
 增加街口支付
+增加無卡分期服務商欄位在後台訂單頁綠界金流區塊
+增加無卡分期後台設定「訂單最高金額」限制 30 萬元
+移除無卡分期後台設定「訂單最低金額」限
 
 v1.1.2510300
 增加無卡分期服務商欄位在後台訂單頁綠界金流區塊
